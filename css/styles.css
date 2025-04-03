@@ -1,0 +1,529 @@
+/* Основные стили */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    padding-top: 56px; /* Для фиксированной навигации */
+    background-color: #f8f9fa;
+}
+
+/* Шапка */
+.main-header {
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    margin-bottom: 40px;
+}
+
+.header-content h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Секции */
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #2c3e50;
+    text-align: center;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: #388e3c;
+}
+
+/* Карточки мест */
+.place-card {
+    display: flex;
+    margin-bottom: 50px;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.place-image {
+    width: 40%;
+    object-fit: cover;
+}
+
+.place-info {
+    padding: 30px;
+    width: 60%;
+}
+
+.place-info h3 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+.place-description {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+.best-time {
+    font-style: italic;
+    color: #7f8c8d;
+    margin-top: 20px;
+}
+
+/* Новости */
+.news-article {
+    background: white;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.news-date {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+.news-content h3 {
+    color: #2c3e50;
+    margin: 25px 0 15px;
+}
+
+/* Гайды */
+.guide-card {
+    background: white;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.guide-content h3 {
+    color: #2c3e50;
+    margin: 20px 0 10px;
+}
+
+/* Подвал */
+.footer {
+    background: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 50px;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .place-card {
+        flex-direction: column;
+    }
+
+    .place-image, .place-info {
+        width: 100%;
+    }
+
+    .header-content h1 {
+        font-size: 2.5rem;
+    }
+}
+
+/* Новости - блочная структура */
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.news-block {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    padding: 25px;
+}
+
+.news-block:hover {
+    transform: translateY(-5px);
+}
+
+.news-category {
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.news-category.visa {
+    background: #e3f2fd;
+    color: #1976d2;
+}
+
+.news-category.airline {
+    background: #e8f5e9;
+    color: #388e3c;
+}
+
+.news-category.event {
+    background: #fff3e0;
+    color: #ef6c00;
+}
+
+.first_guide {
+    text-align: center;
+    margin: 20px 0 10px;
+    font-size: 1.3rem;
+    background: #e3f2fd;
+    color: #1976d2;
+}
+
+.second_guide {
+    text-align: center;
+    margin: 20px 0 10px;
+    font-size: 1.3rem;
+    background: #e8f5e9;
+    color: #388e3c;
+}
+
+.third_guide {
+    text-align: center;
+    margin: 20px 0 10px;
+    font-size: 1.3rem;
+    background: #fff3e0;
+    color: #ef6c00;
+}
+.news-meta {
+    color: #757575;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.news-block h3 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+}
+
+.news-excerpt ul {
+    padding-left: 20px;
+    margin: 15px 0;
+}
+
+.news-excerpt li {
+    margin-bottom: 8px;
+}
+
+/* Гайды - блочная структура */
+.guides-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.guide-block {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    transition: all 0.3s ease;
+}
+
+.guide-block:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.guide-icon {
+    width: 60px;
+    height: 60px;
+    background: #f5f5f5;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.guide-icon img {
+    width: 40px;
+    height: 40px;
+}
+
+.guide-block h3 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-size: 1.4rem;
+}
+
+.guide-content ul {
+    padding-left: 20px;
+    margin: 10px 0;
+}
+
+.guide-content li {
+    margin-bottom: 8px;
+}
+
+/* Заголовок для внутренних страниц */
+.sub-header {
+    height: 400px;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    margin-bottom: 40px;
+}
+
+.sub-header h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.sub-header p {
+    font-size: 1.2rem;
+    margin-top: 15px;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .news-grid, .guides-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sub-header h1 {
+        font-size: 2rem;
+    }
+}
+
+/* Стили для карточек мест */
+.place-card {
+    display: flex;
+    margin-bottom: 60px;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.place-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.place-image {
+    width: 45%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.place-card:hover .place-image {
+    transform: scale(1.03);
+}
+
+.place-info {
+    padding: 35px;
+    width: 55%;
+}
+
+.place-info h3 {
+    color: #2c3e50;
+    margin-bottom: 25px;
+    font-size: 2rem;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.place-info h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: #ef6c00;
+}
+
+.place-description {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #34495e;
+    line-height: 1.7;
+}
+
+
+.place-facts {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 30px;
+    border-left: 4px solid #3498db;
+}
+
+.place-facts p {
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+.place-facts p:last-child {
+    margin-bottom: 0;
+}
+
+/* Адаптивность */
+@media (max-width: 992px) {
+    .place-card {
+        flex-direction: column;
+    }
+
+    .place-image, .place-info {
+        width: 100%;
+    }
+
+    .place-image {
+        height: 300px;
+    }
+}
+
+@media (max-width: 576px) {
+    .place-info {
+        padding: 25px 20px;
+    }
+
+    .place-info h3 {
+        font-size: 1.6rem;
+    }
+}
+
+/* Стили для страницы "О нас" */
+.about-section {
+    background: white;
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.mission-statement {
+    margin-bottom: 50px;
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.feature-card {
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: 8px;
+    border-left: 4px solid #3498db;
+}
+
+.feature-card h3 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    text-align: center;
+    margin: 40px 0;
+}
+
+.stat-item {
+    padding: 25px;
+    background: #DCDCDC;
+    border-radius: 8px;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #0000FF;
+    margin-bottom: 10px;
+}
+
+.stat-label {
+    color: #7f8c8d;
+    font-size: 1.1rem;
+}
+
+.map-section {
+    margin: 60px 0;
+}
+
+.google-map {
+    margin-top: 30px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.contact-section {
+    margin-top: 60px;
+}
+
+.contact-methods {
+    background: #f8f9fa;
+    padding: 30px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    line-height: 2;
+}
+
+.contact-methods a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+.social-icon {
+    display: inline-block;
+    margin-right: 15px;
+    color: #2c3e50;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-section {
+        padding: 25px;
+    }
+}
